@@ -1,0 +1,81 @@
+<header>
+  <div class="nav-bar">
+    <div class="nav-left">
+      <div class="logo">
+        <img src="/public/image/logo_black.png">
+      </div>
+    </div>
+    <div class="nav-center">
+      <ul>
+        <li><a href='/' class="lia">Home</a></li>
+        <li class="product">
+          <a href='#'>Product<img id="iconImg" src="/public/icon/Chevron-down.svg"></a>
+          <div class="nav-product">
+            <h2>Mac Apps</h2>
+            <div class="row">
+              <div class="col-sm-6 col-md-4 col-lg-3" v-for="(item,index) in macApps">
+                <a href="#">
+                  <div class="thumbnail">
+                    <img :src="'/public/icon/'+item.image" alt="...">
+                    <div class="title">
+                      {[ item.title ]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <h2>iOS Apps</h2>
+            <div class="row">
+              <div class="col-sm-6 col-md-4 col-lg-3" v-for="(item,index) in iosApps">
+                <a href="#">
+                  <div class="thumbnail">
+                    <img :src="'/public/icon/'+item.image" alt="...">
+                    <div class="title">
+                      {[ item.title ]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </li>
+        <li><a href='/blog' class="lia">Blog</a></li>
+        <li><a href='/support' class="lia">Support</a></li>
+        <li><a href='/partners' class="lia">Partners</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <button class="burger">
+        <div class="top-line"></div>
+        <div class="middle-line"></div>
+        <div class="bottom-line"></div>
+      </button>
+    </div>
+  </div>
+  <div class="promotion-dialog">
+    <div class="promotion-appTitle">
+      Cleaner One - Disk Clean
+    </div>
+    <img src="/public/icon/product-Mac_iOS-DiskCleaner.svg" alt="">
+    <div class="promotion-appDescription">
+      All-in-one Disk Cleaning Manager for Mac
+    </div>
+    <div class="promotion-content">
+      UP TO
+      <span>70%</span><ul>
+      <li class="currentPrice">$6.6</li>
+      <li class="normalPrice"><s>$8.8</s></li>
+    </ul>
+    </div>
+    <div class="promotion-btn">
+      <a href="#">SHOP NOW</a>
+    </div>
+    <div class="promotion-close">
+      <a href="#" id="promotionClose"><img src="/public/icon/close-b.svg" alt=""></a>
+    </div>
+  </div>
+  <div class="promotion-bg">
+  </div>
+</header>

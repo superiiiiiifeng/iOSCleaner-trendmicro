@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>BLog</title>
+  <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+
+</head>
+<body>
+
+<div id="app">
+  {{include '../layouts/header.html'}}
+  {{block 'body'}}
+  <div class="container blog">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-4" v-for="(item,index) in blogItems">
+        <div class="thumbnail">
+          <img :src="'/public/icon/'+item.image" alt="...">
+          <div class="tag">
+            <ul>
+              <li v-for="(item,index) in item.tags"><a href="#">{[ item ]}</a></li>
+            </ul>
+          </div>
+          <div class="title">
+            {[ item.title ]}
+          </div>
+          <div class="caption">
+            {[ item.description ]}
+          </div>
+          <div class="info">
+            <img :src="'/public/icon/'+item.photo" alt="">
+            <span>
+              <ul>
+               <li>{[ item.creator ]}</li>
+               <li>Posted on {[ item.createdDate ]} <a href="/blog/detail">查看详情</a></li>
+              </ul>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/block}}
+  {{include '../layouts/footer.html'}}
+</div>
+
+<script src="/node_modules/vue/dist/vue.js"></script>
+<script src="/public/js/vue.js"></script>
+<script src="/public/js/main.js"></script>
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>

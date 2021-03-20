@@ -1,0 +1,9 @@
+1、给盒子加圆角时不能有padding
+2、两个盒子之间有空白间隙，若非margin和padding作用，则可能是其中一个盒子中含有ul，ul具有默认margin，清除即可消除空白间隙。
+3、实现不同高度盒子内容水平垂直居中display: flex;align-items: center;justify-content: center;
+4、css的hover事件只能是父元素hover，子元素改变样式，其他元素都不行，只能用js控制。
+5、在css中修改img属性通过content: url("/public/icon/Chevron-up.svg");
+6、css的hover事件作用在伪元素上通过 a:hover::before {}
+7、在package.json文件的 "scripts":{}里加入"dev": "node src/index.js"，然后在index.js中加入app.set('views','src/views');修改视图文件默认路径，就可以直接npm run dev来运行了
+8、不能改node_modules里面的任何数据，因为拷贝的时候要重新npm install
+8、获取background-image属性值返回的结果是url('path')而不是图片url，要获取背景图片属性background-image中图片路径的值，可以通过split()或replace()获取，如.split('(')[1].split(')')[0];

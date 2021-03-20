@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+
+</head>
+<body>
+
+<div id="app">
+  {{include './layouts/header.html'}}
+  {{block 'body'}}
+  <div class="container">
+    <!--轮播图-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="2000">
+      <ol class="carousel-indicators">
+        <li v-for="(item,index) in apps" data-target="#carouselExampleCaptions" data-slide-to="index" :class="{active: index===0 }"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item" v-for="(item,index) in apps" :class="{active: index===0 }">
+          <img :src="'/public/icon/bgc'+(index+1)+'.svg'" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-md-block">
+            <h3>{[ item.title ]}</h3>
+            <h5>{[ item.subTitle ]}</h5>
+            <p>{[ item.description ]}</p>
+            <img :src="'/public/icon/'+item.image" alt="">
+            <ul>
+              <li v-show="item.downloadLinks.length > 1">
+                <a :href="item.downloadLinks[0]">
+                  <img src="/public/icon/apple.svg" alt="">
+                  <span>
+                      <p>Download on the</p>
+                      <h5>Mac App Store</h5>
+                    </span>
+                </a>
+              </li>
+              <li>
+                <a :href="item.downloadLinks[item.downloadLinks.length > 1?1:0]">
+                  Free Download
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev carousel-arrow" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next carousel-arrow" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!--APP列表展示-->
+    <div class="appList">
+      <h1>All Mac/iOS Apps to Make Your Life Easier</h1>
+      <h2>Mac Apps</h2>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-4" v-for="(item,index) in macApps">
+          <a href="/product">
+            <div class="thumbnail">
+              <div class="title">
+                {[ item.title ]}
+              </div>
+              <img :src="'/public/icon/'+item.image" alt="...">
+              <div class="caption">
+                {[ item.description ]}
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <hr>
+      <h2>iOS Apps</h2>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-4" v-for="(item,index) in iosApps">
+          <a href="#">
+            <div class="thumbnail">
+              <div class="title">
+                {[ item.title ]}
+              </div>
+              <img :src="'/public/icon/'+item.image" alt="...">
+              <div class="caption">
+                {[ item.description ]}
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/block}}
+  {{include './layouts/footer.html'}}
+</div>
+
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/public/js/vue.js"></script>
+    <script src="/public/js/main.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+
+</body>
+</html>

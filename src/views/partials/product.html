@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Product</title>
+  <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+
+</head>
+<body>
+<div id="app">
+  {{include '../layouts/header.html'}}
+  {{block 'body'}}
+  <div class="product-detail">
+    <div class="row banner">
+      <div class="col-lg-4 product-left">
+        <h1>Cleaner One - Disk Clean</h1>
+        <h2>All-in-one photo cleaner and system manager</h2>
+        <p>We are always availed to consult on taking your higher education to the next level so you can stay competitive in the global world. the global world. the global world. the global world. the global world. </p>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="/public/icon/apple.svg" alt="">
+              <span>
+                <p>Download on the</p>
+                <h5>Mac App Store</h5>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p>Free Download</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4 product-center">
+        <img src="/public/icon/CleanerOne.svg" alt="">
+      </div>
+      <div class="col-lg-4 product-right">
+        <div>
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <p>A powerful and safe cleaner of memory and processing!</p>
+        </div>
+        <div>
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <p>A great app that does Exactly as it says, and with ease!</p>
+        </div>
+        <div>
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <img src="/public/icon/star.svg" alt="">
+          <p>Highly recommend, tested others similar apps too.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="features">
+      <h2>Key Features</h2>
+      <div class="row">
+        <div class="col-lg-4" v-for="(item,index) in features">
+          <div class="caption">
+            <img :src="'/public/icon/'+item.photo" alt="">
+            <h5>{[ item.title ]}</h5>
+            <p>{[ item.description ]}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="FAQ">
+      <h2>Frequntly Asked Questions</h2>
+      <div class="content-box" v-for="(item,index) in faqs">
+        <h5>Question{[ index + 1 ]}: {[ item.question ]}</h5>
+        <p>{[ item.answer ]}</p>
+      </div>
+    </div>
+  </div>
+  {{/block}}
+  {{include '../layouts/footer.html'}}
+</div>
+
+<script src="/node_modules/vue/dist/vue.js"></script>
+<script src="/public/js/vue.js"></script>
+<script src="/public/js/main.js"></script>
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>

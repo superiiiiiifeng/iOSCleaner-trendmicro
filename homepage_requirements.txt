@@ -1,0 +1,50 @@
+iOS Cleaner 网站：
+
+网页组成: Header, Content, Footer
+菜单: Home, Products, Blog, Support, Partners 
+子页面: Product Detail, Blog Detail
+组件: Promotion Dialog
+
+Home:
+Slider 轮播 参考 https://nicepage.com/website-templates/preview/marketing-trends-strategies-76696?device=desktop
+data struct - app: id, name, title, subTitle, description, downloadLink, image 
+App list 参考 https://nicepage.com/st/91247/how-does-it-works-website-template
+
+Products:
+下拉菜单 参考 
+https://mac.eltima.com/
+https://macpaw.com/
+
+Blog: 参考 https://nicepage.com/website-templates/preview/architecture-design-news-87416?device=desktop
+data struct - blog: id, title, description, createdDate, updateDate, creator, thumbnail, content
+
+Support: 参考
+https://nicepage.com/st/82378/lets-connect-our-studio-website-template
+https://nicepage.com/st/82368/contact-our-agency-website-template
+
+Partners: 参考
+https://nicepage.com/st/87105/creative-strategy-in-business-website-template
+
+Product Detail：
+产品介绍(带下载按钮) 参考
+https://nicepage.com/st/117537/about-design-studio-website-template
+https://nicepage.com/st/71369/home-renovating-technology-website-template 
+https://nicepage.com/st/94514/ecology-and-technology-website-template
+
+data struct - feature: id, appId, title, description, icon
+
+FAQ : 参考 https://nicepage.com/st/85793/feature-list-website-template
+data struct - faq: id, appId, question, answer
+
+
+Blog Detail：参考
+https://macpaw.com/how-to/merge-folders-mac
+
+
+Promotion Dialog参考 (只弹一次)
+https://nicepage.com/st/143648/black-friday-popup-website-template
+data struct - promotion: id, appId, title, description, normalPrice, currentPrice, link, image
+
+
+其他: 统一样式的字体，统一的色彩风格，统一的按钮，文本框等组件。数据可配置，L10N
+进阶: Admin页面，WYSIWYG HTML editor for Blog，SEO

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Support</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+
+</head>
+<body>
+
+<div id="app">
+    {{include '../layouts/header.html'}}
+    {{block 'body'}}
+    <div class="container support">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <img class="support-icon" src="/public/icon/location.svg">
+                        <p>南京市雨花台区安德门大街56号世茂城品国际广场B栋写字楼8-14层</p>
+                    </div>
+                    <div class="col-xl-6">
+                        <img class="support-icon" src="/public/icon/phone.svg">
+                        <p>025-5238 6000</p>
+                    </div>
+                    <div class="col-xl-6">
+                        <img class="support-icon" src="/public/icon/mail.svg">
+                        <p>HR_CDC@trendmicro.com.cn</p>
+                    </div>
+                    <div class="col-xl-6">
+                        <img class="support-icon" src="/public/icon/fax.svg">
+                        <p>025-5238 6002</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="col-xl-12" src="/public/image/location.png" alt="location">
+                </div>
+            </div>
+            <div class="col-xl-6 submit-message">
+                <h1>Send us message</h1>
+                <p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" accesskey="N">Your name</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput2" accesskey="M">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea" accesskey="T">Your message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea" rows="4" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/block}}
+    {{include '../layouts/footer.html'}}
+</div>
+
+<script src="/node_modules/vue/dist/vue.js"></script>
+<script src="/public/js/vue.js"></script>
+<script src="/public/js/main.js"></script>
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>

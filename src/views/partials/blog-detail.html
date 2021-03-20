@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BLog detail</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/github-markdown.css">
+
+</head>
+<body>
+<div id="app">
+    {{include '../layouts/header.html'}}
+    {{block 'body'}}
+    <div class="container blog-detail">
+        <div class="thumbnail">
+            <img src="/public/icon/Cleaner-One.svg" alt="...">
+            <div class="tit">
+                <div class="title">
+                    How to clean my disk with cleaner one?
+                </div>
+                <div class="info">
+                    <img src="/public/icon/female.svg" alt="">
+                    <span>
+              <ul>
+               <li>Cleaner One Assistant</li>
+               <li>Posted on 2020-12-31</li>
+              </ul>
+            </span>
+                </div>
+                <div class="tag">
+                    <ul>
+                        <li><a href="#">Cleaner One</a></li>
+                        <li value="100"><a href="#">User Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="blog-content" class="container">
+    <article class="markdown-body">
+        <div v-html="compileMarkDown(text)"></div>
+    </article>
+</div>
+{{/block}}
+{{include '../layouts/footer.html'}}
+<script src="/node_modules/vue/dist/vue.js"></script>
+<script src="/public/js/vue.js"></script>
+<script src="/public/js/main.js"></script>
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/node_modules/showdown/dist/showdown.js"></script>
+
+<script>
+    var defaultOptions = showdown.getDefaultOptions(); //获取showdown的默认设置
+    console.log(defaultOptions);
+    new Vue({
+        el: '#blog-content',
+        data: {
+            text: '# 我是大标题1\n' + ':+1:'+
+                    '\n' +
+                    '## 我是大标题2\n' +
+                    '\n' +
+                    '- 我是列表\n' +
+                    '- 我是列表\n' +
+                    '- 我是列表\n' +
+                    '\n' +
+                    '**粗体**\n' +
+                    '\n' +
+                    '`console.log()`\n' +
+                    '\n' +
+                    '`function(){}`\n' +
+                    '\n' +
+                    '```javascript\n' +
+                    'var a = 10;\n' +
+                    'function fn(){\n' +
+                    '    console.log(a)\n' +
+                    '}\n' +
+                    'fn()\n' +
+                    '```\n' +
+                    '\n' +
+                    '```html\n' +
+                    '<div>\n' +
+                    '    <p></p>\n' +
+                    '</div>\n' +
+                    '```\n' +
+                    '\n' +
+                    '| 传智   | 表头1  |   表头1  |\n' +
+                    '| ---- | ---- | ---- |\n' +
+                    '| 黑马   | 内容1  |   内容2  |\n' +
+                    '| 博学谷  | 内容1  |   内容2  |\n' +
+                    '\n'
+        },
+        methods: {
+            compileMarkDown(val) {
+                return new showdown.Converter({
+                    tables: true,
+                    emoji: true
+                }).makeHtml(val)
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>
